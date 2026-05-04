@@ -18,44 +18,37 @@ export const QuoteVideo = ({ part1, part2, author, videoUrl, theme }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames, width } = useVideoConfig();
 
-  // Fallback theme if not provided
+  // Fallback theme (Viral Dark/Gold)
   const activeTheme = theme || {
-    gradient: "linear-gradient(135deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%)",
-    accent: "#FFD700"
+    name: "Midnight Gold",
+    gradient: "linear-gradient(135deg, #000000 0%, #1a1a1a 100%)",
+    accent: "#FFD700",
+    search: "dark, moody, luxury"
   };
 
-  // Timing: Part 1 is 0-7s (0-210 frames), Part 2 is 7-9s (210-270 frames)
-  const part1Opacity = interpolate(
-    frame,
-    [0, 15, 195, 210],
-    [0, 1, 1, 0],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
-  );
+  // --- ANIMATIONS ---
+  const part1Opacity = interpolate(frame, [0, 15, 195, 210], [0, 1, 1, 0]);
+  const part2Opacity = interpolate(frame, [210, 225, 255, 270], [0, 1, 1, 0]);
+  
+  // Smooth Zoom (Viral movement)
+  const scale = interpolate(frame, [0, durationInFrames], [1, 1.2]);
 
-  const part2Opacity = interpolate(
-    frame,
-    [210, 225, 255, 270],
-    [0, 1, 1, 0],
-    { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
-  );
+  // Spring entrance for Part 2 (Viral "Pop")
+  const part2Spring = spring({ frame: frame - 210, fps, config: { damping: 12, stiffness: 100 } });
 
-  const scale = interpolate(frame, [0, durationInFrames], [1, 1.15]);
+  // Floating effect for author
+  const floatY = interpolate(frame, [0, durationInFrames], [0, -20]);
 
-  // Handle text color based on theme brightness
+  // Handle text color
   const isLightTheme = activeTheme.name === "Morning Sky";
-  const textColor = isLightTheme ? "#2d3436" : "white";
+  const textColor = isLightTheme ? "#1a1a1a" : "white";
   const quoteColor = activeTheme.accent;
-
-  // Scale factor for 4K (baseline was 1080p)
   const sf = width / 1080;
 
   return (
-    <AbsoluteFill style={{ backgroundColor: isLightTheme ? "#fdfbf7" : "#1a1a1a", overflow: "hidden" }}>
-      {/* Background Layer - DYNAMIC THEME */}
-      <AbsoluteFill style={{ 
-        transform: `scale(${scale})`,
-        background: activeTheme.gradient
-      }}>
+    <AbsoluteFill style={{ backgroundColor: "#000", overflow: "hidden" }}>
+      {/* Background Layer with Viral Grain/Vignette */}
+      <AbsoluteFill style={{ transform: `scale(${scale})`, background: activeTheme.gradient }}>
         {videoUrl && (
           <Video
             src={videoUrl}
@@ -63,75 +56,98 @@ export const QuoteVideo = ({ part1, part2, author, videoUrl, theme }) => {
               width: "100%",
               height: "100%",
               objectFit: "cover",
-              opacity: isLightTheme ? 0.4 : 0.6,
-              mixBlendMode: isLightTheme ? "multiply" : "overlay"
+              opacity: isLightTheme ? 0.4 : 0.5,
+              mixBlendMode: isLightTheme ? "multiply" : "screen",
+              filter: "contrast(1.1) brightness(0.9)"
             }}
             muted
             loop
-            onError={(e) => console.error("Video load error:", e)}
           />
         )}
-        <AbsoluteFill 
-          style={{ 
-            background: "radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 80%)"
-          }} 
-        />
+        {/* Cinematic Vignette */}
+        <AbsoluteFill style={{ 
+          background: "radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%)",
+          mixBlendMode: "multiply"
+        }} />
       </AbsoluteFill>
 
-      {/* Lofi Music */}
+      {/* Background Music */}
       <Audio src={staticFile("lofi.mp3")} volume={0.4} />
 
-      {/* Watermark / Branding */}
+      {/* Watermark */}
       <div style={{
         position: "absolute",
-        bottom: 60 * sf,
+        bottom: 80 * sf,
         left: "0",
         right: "0",
         textAlign: "center",
         fontFamily,
-        fontSize: 28 * sf,
-        fontWeight: "700",
-        color: textColor,
-        opacity: 0.5,
-        letterSpacing: 4 * sf,
-        textTransform: "uppercase"
+        fontSize: 32 * sf,
+        fontWeight: "900",
+        color: quoteColor,
+        opacity: 0.4,
+        letterSpacing: 8 * sf,
+        textTransform: "uppercase",
+        textShadow: `0 0 ${10 * sf}px ${quoteColor}`
       }}>
-        @MindGambit
+        MIND GAMBIT
       </div>
 
-      {/* Part 1 Content */}
+      {/* Part 1: THE HOOK (Suspenseful) */}
       <AbsoluteFill
         style={{
           display: "flex",
           justifyContent: "flex-start",
           alignItems: "center",
           padding: 100 * sf,
-          paddingTop: "25%",
+          paddingTop: "30%",
           opacity: part1Opacity,
         }}
       >
         <div style={{ textAlign: "center", color: textColor }}>
-          <div style={{ fontSize: 140 * sf, fontFamily: playfair, marginBottom: -50 * sf, opacity: 0.8, color: quoteColor }}>
+          <div style={{ 
+            fontSize: 160 * sf, 
+            fontFamily: playfair, 
+            marginBottom: -40 * sf, 
+            color: quoteColor,
+            textShadow: `0 0 ${20 * sf}px ${quoteColor}66`
+          }}>
             “
           </div>
           <h1 style={{ 
             fontFamily: playfair, 
-            fontSize: 84 * sf, 
-            fontWeight: "800", 
-            lineHeight: "1.2", 
+            fontSize: 92 * sf, 
+            fontWeight: "900", 
+            lineHeight: "1.1", 
             margin: "0",
-            textShadow: isLightTheme ? "none" : `0 ${4 * sf}px ${15 * sf}px rgba(0,0,0,0.2)` 
+            textShadow: isLightTheme ? "none" : `0 ${5 * sf}px ${25 * sf}px rgba(0,0,0,0.5)` 
           }}>
             {part1.endsWith("...") ? part1 : `${part1}...`}
           </h1>
-          <div style={{ marginTop: 50 * sf, height: 3 * sf, width: 120 * sf, backgroundColor: quoteColor, marginInline: "auto" }} />
-          <p style={{ fontFamily, fontSize: 38 * sf, fontWeight: "600", marginTop: 50 * sf, textTransform: "uppercase", letterSpacing: 6 * sf, opacity: 0.9 }}>
+          <div style={{ 
+            marginTop: 60 * sf, 
+            height: 4 * sf, 
+            width: 150 * sf, 
+            backgroundColor: quoteColor, 
+            marginInline: "auto",
+            boxShadow: `0 0 ${15 * sf}px ${quoteColor}` 
+          }} />
+          <p style={{ 
+            fontFamily, 
+            fontSize: 40 * sf, 
+            fontWeight: "800", 
+            marginTop: 60 * sf, 
+            textTransform: "uppercase", 
+            letterSpacing: 8 * sf, 
+            opacity: 0.8,
+            transform: `translateY(${floatY}px)`
+          }}>
             — {author} —
           </p>
         </div>
       </AbsoluteFill>
 
-      {/* Part 2 Content */}
+      {/* Part 2: THE REVEAL (Impactful) */}
       <AbsoluteFill
         style={{
           display: "flex",
@@ -139,16 +155,17 @@ export const QuoteVideo = ({ part1, part2, author, videoUrl, theme }) => {
           alignItems: "center",
           padding: 80 * sf,
           opacity: part2Opacity,
+          transform: `scale(${interpolate(part2Spring, [0, 1], [0.8, 1])})`
         }}
       >
         <div style={{ textAlign: "center", color: textColor }}>
           <h1 style={{ 
             fontFamily: playfair, 
-            fontSize: 100 * sf, 
+            fontSize: 120 * sf, 
             fontWeight: "900", 
-            lineHeight: "1.1", 
+            lineHeight: "1", 
             color: quoteColor,
-            textShadow: isLightTheme ? "none" : `0 ${10 * sf}px ${30 * sf}px rgba(0,0,0,0.3)`
+            textShadow: `0 0 ${40 * sf}px ${quoteColor}88, 0 ${10 * sf}px ${40 * sf}px rgba(0,0,0,0.5)`
           }}>
             {part2}
           </h1>

@@ -24,10 +24,11 @@ async function replenishQuotes() {
   console.log("🤖 Asking Gemini to generate 30 new motivational quotes...");
 
   const prompt = `
-    Generate 30 high-quality motivational quotes for a YouTube channel called 'Mind Gambit'.
+    Generate 30 high-quality 'Viral' motivational quotes for a YouTube channel called 'Mind Gambit'. 
+    Focus on 'Sigma Mindset', Stoicism, and Discipline. 
     Each quote must be split into two parts: 
-    - Part 1: The 'Hook' (approx 5-10 words, ends with a cliffhanger or builds suspense).
-    - Part 2: The 'Punchline' (approx 3-7 words, the impactful conclusion).
+    - Part 1: The 'Viral Hook' (Must be aggressive, thought-provoking, or start with 'Most people...', 'The hard truth is...', 'Listen carefully...').
+    - Part 2: The 'Mic Drop' (The impactful, short, and punchy conclusion).
     
     Format the output as a JSON array of objects. Each object MUST have these fields:
     - id: a unique string like 'ai_001', 'ai_002', etc.
