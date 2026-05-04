@@ -15,7 +15,7 @@ async function replenishQuotes() {
   }
 
   const genAI = new GoogleGenerativeAI(apiKey);
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-flash-latest" });
 
   // Read existing quotes to avoid duplicates
   const existingQuotes = JSON.parse(fs.readFileSync(QUOTES_PATH, "utf-8"));

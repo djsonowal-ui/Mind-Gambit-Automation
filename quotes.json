@@ -47,5 +47,275 @@
     "category": "belief",
     "keywords": "sunrise, light, bright, meadow",
     "used": false
+  },
+  {
+    "id": "ai_001",
+    "part1": "You are not actually afraid of the future",
+    "part2": "You fear repeating the past",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "foggy, forest, path, mysterious",
+    "used": false
+  },
+  {
+    "id": "ai_002",
+    "part1": "Everyone wants the crown until they feel",
+    "part2": "The weight of the responsibility",
+    "author": "Mind Gambit",
+    "category": "success",
+    "keywords": "throne, crown, dark, cinematic",
+    "used": false
+  },
+  {
+    "id": "ai_003",
+    "part1": "Don't tell people your plans, instead",
+    "part2": "Show them your results",
+    "author": "Mind Gambit",
+    "category": "discipline",
+    "keywords": "luxury, car, office, city",
+    "used": false
+  },
+  {
+    "id": "ai_004",
+    "part1": "The mountain you are climbing today is",
+    "part2": "Tomorrow’s training ground",
+    "author": "Mind Gambit",
+    "category": "resilience",
+    "keywords": "mountain, climber, sunrise, peak",
+    "used": false
+  },
+  {
+    "id": "ai_005",
+    "part1": "A ship is safe in the harbor",
+    "part2": "But that's not its purpose",
+    "author": "John A. Shedd",
+    "category": "risk",
+    "keywords": "ocean, ship, waves, horizon",
+    "used": false
+  },
+  {
+    "id": "ai_006",
+    "part1": "Small minds discuss people, but great minds",
+    "part2": "Discuss ideas and visions",
+    "author": "Eleanor Roosevelt",
+    "category": "mindset",
+    "keywords": "library, books, light, study",
+    "used": false
+  },
+  {
+    "id": "ai_007",
+    "part1": "The sun does not ask for permission",
+    "part2": "It simply rises and shines",
+    "author": "Mind Gambit",
+    "category": "confidence",
+    "keywords": "sun, bright, morning, sky",
+    "used": false
+  },
+  {
+    "id": "ai_008",
+    "part1": "You cannot win a war if you",
+    "part2": "Are at war with yourself",
+    "author": "Mind Gambit",
+    "category": "inner-peace",
+    "keywords": "meditation, calm, lake, reflection",
+    "used": false
+  },
+  {
+    "id": "ai_009",
+    "part1": "Discipline is choosing between what you want",
+    "part2": "And what you want most",
+    "author": "Abraham Lincoln",
+    "category": "discipline",
+    "keywords": "gym, weights, focus, sweat",
+    "used": false
+  },
+  {
+    "id": "ai_010",
+    "part1": "It is not the mountain we conquer",
+    "part2": "But our own internal limits",
+    "author": "Sir Edmund Hillary",
+    "category": "growth",
+    "keywords": "hiking, snowy, summit, clouds",
+    "used": false
+  },
+  {
+    "id": "ai_011",
+    "part1": "Wealth is not about having a lot",
+    "part2": "But needing very little",
+    "author": "Epictetus",
+    "category": "wealth",
+    "keywords": "nature, simple, cabin, peaceful",
+    "used": false
+  },
+  {
+    "id": "ai_012",
+    "part1": "If you want to fly, you must",
+    "part2": "Give up everything that weighs",
+    "author": "Mind Gambit",
+    "category": "freedom",
+    "keywords": "eagle, flight, sky, blue",
+    "used": false
+  },
+  {
+    "id": "ai_013",
+    "part1": "Silence is the loudest scream of a",
+    "part2": "Mind that has seen enough",
+    "author": "Mind Gambit",
+    "category": "wisdom",
+    "keywords": "rain, window, mood, dark",
+    "used": false
+  },
+  {
+    "id": "ai_014",
+    "part1": "Your habits will either build your palace",
+    "part2": "Or become your prison cell",
+    "author": "Mind Gambit",
+    "category": "habit",
+    "keywords": "mansion, architecture, structure, stones",
+    "used": false
+  },
+  {
+    "id": "ai_015",
+    "part1": "To lead the orchestra, you must first",
+    "part2": "Turn your back on the crowd",
+    "author": "Max Lucado",
+    "category": "leadership",
+    "keywords": "stage, lights, conductor, silhouette",
+    "used": false
+  },
+  {
+    "id": "ai_016",
+    "part1": "Great things never came from staying inside",
+    "part2": "Your comfortable safe zone",
+    "author": "Mind Gambit",
+    "category": "success",
+    "keywords": "desert, adventure, open, road",
+    "used": false
+  },
+  {
+    "id": "ai_017",
+    "part1": "Don't look back, you are not",
+    "part2": "Going that way anyway",
+    "author": "Mind Gambit",
+    "category": "focus",
+    "keywords": "highway, driving, speed, forward",
+    "used": false
+  },
+  {
+    "id": "ai_018",
+    "part1": "The person you will be in five",
+    "part2": "Depends on the books today",
+    "author": "Mind Gambit",
+    "category": "growth",
+    "keywords": "reading, coffee, cozy, morning",
+    "used": false
+  },
+  {
+    "id": "ai_019",
+    "part1": "Work in silence and let your success",
+    "part2": "Make all the noise",
+    "author": "Mind Gambit",
+    "category": "hustle",
+    "keywords": "neon, night, typewriter, focus",
+    "used": false
+  },
+  {
+    "id": "ai_020",
+    "part1": "Sometimes you have to burn a bridge",
+    "part2": "To keep the wolves away",
+    "author": "Mind Gambit",
+    "category": "boundaries",
+    "keywords": "fire, bridge, night, orange",
+    "used": false
+  },
+  {
+    "id": "ai_021",
+    "part1": "Knowledge is not power, the only power",
+    "part2": "Is the application of knowledge",
+    "author": "Mind Gambit",
+    "category": "wisdom",
+    "keywords": "blueprint, engineering, hands, working",
+    "used": false
+  },
+  {
+    "id": "ai_022",
+    "part1": "An arrow can only be shot by",
+    "part2": "Pulling it backward first",
+    "author": "Mind Gambit",
+    "category": "resilience",
+    "keywords": "archery, bow, tension, target",
+    "used": false
+  },
+  {
+    "id": "ai_023",
+    "part1": "Stop waiting for the perfect moment because",
+    "part2": "The moment is never perfect",
+    "author": "Mind Gambit",
+    "category": "action",
+    "keywords": "clock, watch, time, blur",
+    "used": false
+  },
+  {
+    "id": "ai_024",
+    "part1": "You are one decision away from a",
+    "part2": "Completely different life",
+    "author": "Mind Gambit",
+    "category": "change",
+    "keywords": "crossroads, fork, road, decision",
+    "used": false
+  },
+  {
+    "id": "ai_025",
+    "part1": "The lion does not turn around when",
+    "part2": "A small dog barks",
+    "author": "African Proverb",
+    "category": "confidence",
+    "keywords": "lion, savanna, predator, power",
+    "used": false
+  },
+  {
+    "id": "ai_026",
+    "part1": "Be careful who you trust, because salt",
+    "part2": "Often looks just like sugar",
+    "author": "Mind Gambit",
+    "category": "caution",
+    "keywords": "crystal, macro, white, abstract",
+    "used": false
+  },
+  {
+    "id": "ai_027",
+    "part1": "Don't compare your Chapter One to someone",
+    "part2": "Else’s Chapter Twenty",
+    "author": "Mind Gambit",
+    "category": "perspective",
+    "keywords": "notebook, writing, pencil, start",
+    "used": false
+  },
+  {
+    "id": "ai_028",
+    "part1": "Average people have great wishes, but",
+    "part2": "Successful people have great goals",
+    "author": "Mind Gambit",
+    "category": "success",
+    "keywords": "suit, skyline, skyscraper, vision",
+    "used": false
+  },
+  {
+    "id": "ai_029",
+    "part1": "The pain of discipline is far less",
+    "part2": "Than the pain of regret",
+    "author": "Mind Gambit",
+    "category": "discipline",
+    "keywords": "running, track, rain, determination",
+    "used": false
+  },
+  {
+    "id": "ai_030",
+    "part1": "Your mind is a garden, but only",
+    "part2": "If you pull the weeds",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "garden, flowers, hands, dirt",
+    "used": false
   }
 ]
