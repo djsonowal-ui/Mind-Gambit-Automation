@@ -1,0 +1,29 @@
+{
+  "name": "motivational-automation",
+  "version": "1.0.0",
+  "description": "Automated motivational quote videos using Remotion",
+  "main": "automate.mjs",
+  "type": "module",
+  "scripts": {
+    "dev": "remotion studio src/index.jsx",
+    "build": "remotion bundle src/index.jsx",
+    "render": "node automate.mjs"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.448",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/google-fonts": "^4.0.448",
+    "@remotion/renderer": "^4.0.448",
+    "cross-fetch": "^4.1.0",
+    "dotenv": "^17.4.2",
+    "googleapis": "^171.4.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "remotion": "^4.0.0",
+    "lucide-react": "^0.378.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  },
+  "private": true
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "id": "q1",
+    "part1": "The only way to do great work",
+    "part2": "is to love what you do.",
+    "author": "Steve Jobs",
+    "category": "work",
+    "keywords": "sunrise, bright, workspace, sunny",
+    "used": true,
+    "lastUsed": "2026-05-04T07:07:19.552Z"
+  },
+  {
+    "id": "q2",
+    "part1": "Success is not final, failure is not fatal:",
+    "part2": "it is the courage to continue that counts.",
+    "author": "Winston Churchill",
+    "category": "success",
+    "keywords": "mountain, sunny, peak, bright sky",
+    "used": true,
+    "lastUsed": "2026-05-04T04:32:03.862Z"
+  },
+  {
+    "id": "q3",
+    "part1": "The future belongs to those who believe",
+    "part2": "in the beauty of their dreams.",
+    "author": "Eleanor Roosevelt",
+    "category": "dreams",
+    "keywords": "daylight, clouds, bright, sky",
+    "used": true,
+    "lastUsed": "2026-05-04T07:28:43.909Z"
+  },
+  {
+    "id": "q4",
+    "part1": "Hardships often prepare ordinary people",
+    "part2": "for an extraordinary destiny.",
+    "author": "C.S. Lewis",
+    "category": "resilience",
+    "keywords": "morning, field, flowers, bright",
+    "used": true,
+    "lastUsed": "2026-05-04T07:18:43.841Z"
+  },
+  {
+    "id": "q5",
+    "part1": "Believe you can",
+    "part2": "and you're halfway there.",
+    "author": "Theodore Roosevelt",
+    "category": "belief",
+    "keywords": "sunrise, light, bright, meadow",
+    "used": false
+  }
+]
