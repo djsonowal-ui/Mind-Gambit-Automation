@@ -1,0 +1,34 @@
+name: Weekly AI Quote Replenishment
+
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Every Monday at 00:00 UTC
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  replenish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate Quotes
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: node replenish.mjs
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name "Mind Gambit Bot"
+          git config --global user.email "bot@mindgambit.com"
+          git add quotes.json
+          git commit -m "AI: Added 30 new quotes via Gemini" || echo "No changes to commit"
+          git push
