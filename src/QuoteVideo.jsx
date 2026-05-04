@@ -16,7 +16,7 @@ const { fontFamily: playfair } = loadPlayfair();
 
 export const QuoteVideo = ({ part1, part2, author, videoUrl, theme }) => {
   const frame = useCurrentFrame();
-  const { fps, durationInFrames } = useVideoConfig();
+  const { fps, durationInFrames, width } = useVideoConfig();
 
   // Fallback theme if not provided
   const activeTheme = theme || {
@@ -45,6 +45,9 @@ export const QuoteVideo = ({ part1, part2, author, videoUrl, theme }) => {
   const isLightTheme = activeTheme.name === "Morning Sky";
   const textColor = isLightTheme ? "#2d3436" : "white";
   const quoteColor = activeTheme.accent;
+
+  // Scale factor for 4K (baseline was 1080p)
+  const sf = width / 1080;
 
   return (
     <AbsoluteFill style={{ backgroundColor: isLightTheme ? "#fdfbf7" : "#1a1a1a", overflow: "hidden" }}>
@@ -81,16 +84,16 @@ export const QuoteVideo = ({ part1, part2, author, videoUrl, theme }) => {
       {/* Watermark / Branding */}
       <div style={{
         position: "absolute",
-        bottom: "60px",
+        bottom: 60 * sf,
         left: "0",
         right: "0",
         textAlign: "center",
         fontFamily,
-        fontSize: "28px",
+        fontSize: 28 * sf,
         fontWeight: "700",
         color: textColor,
         opacity: 0.5,
-        letterSpacing: "4px",
+        letterSpacing: 4 * sf,
         textTransform: "uppercase"
       }}>
         @MindGambit
@@ -102,27 +105,27 @@ export const QuoteVideo = ({ part1, part2, author, videoUrl, theme }) => {
           display: "flex",
           justifyContent: "flex-start",
           alignItems: "center",
-          padding: "100px",
+          padding: 100 * sf,
           paddingTop: "25%",
           opacity: part1Opacity,
         }}
       >
         <div style={{ textAlign: "center", color: textColor }}>
-          <div style={{ fontSize: "140px", fontFamily: playfair, marginBottom: "-50px", opacity: 0.8, color: quoteColor }}>
+          <div style={{ fontSize: 140 * sf, fontFamily: playfair, marginBottom: -50 * sf, opacity: 0.8, color: quoteColor }}>
             “
           </div>
           <h1 style={{ 
             fontFamily: playfair, 
-            fontSize: "84px", 
+            fontSize: 84 * sf, 
             fontWeight: "800", 
             lineHeight: "1.2", 
             margin: "0",
-            textShadow: isLightTheme ? "none" : "0 4px 15px rgba(0,0,0,0.2)" 
+            textShadow: isLightTheme ? "none" : `0 ${4 * sf}px ${15 * sf}px rgba(0,0,0,0.2)` 
           }}>
             {part1.endsWith("...") ? part1 : `${part1}...`}
           </h1>
-          <div style={{ marginTop: "50px", height: "3px", width: "120px", backgroundColor: quoteColor, marginInline: "auto" }} />
-          <p style={{ fontFamily, fontSize: "38px", fontWeight: "600", marginTop: "50px", textTransform: "uppercase", letterSpacing: "6px", opacity: 0.9 }}>
+          <div style={{ marginTop: 50 * sf, height: 3 * sf, width: 120 * sf, backgroundColor: quoteColor, marginInline: "auto" }} />
+          <p style={{ fontFamily, fontSize: 38 * sf, fontWeight: "600", marginTop: 50 * sf, textTransform: "uppercase", letterSpacing: 6 * sf, opacity: 0.9 }}>
             — {author} —
           </p>
         </div>
@@ -134,18 +137,18 @@ export const QuoteVideo = ({ part1, part2, author, videoUrl, theme }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          padding: "80px",
+          padding: 80 * sf,
           opacity: part2Opacity,
         }}
       >
         <div style={{ textAlign: "center", color: textColor }}>
           <h1 style={{ 
             fontFamily: playfair, 
-            fontSize: "100px", 
+            fontSize: 100 * sf, 
             fontWeight: "900", 
             lineHeight: "1.1", 
             color: quoteColor,
-            textShadow: isLightTheme ? "none" : "0 10px 30px rgba(0,0,0,0.3)"
+            textShadow: isLightTheme ? "none" : `0 ${10 * sf}px ${30 * sf}px rgba(0,0,0,0.3)`
           }}>
             {part2}
           </h1>

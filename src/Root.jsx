@@ -10,8 +10,8 @@ export const RemotionRoot = () => {
         component={QuoteVideo}
         durationInFrames={270} // 9 seconds at 30fps
         fps={30}
-        width={1080}
-        height={1920}
+        width={2160}
+        height={3840}
         defaultProps={{
           text: "The only way to do great work is to love what you do.",
           author: "Steve Jobs",
