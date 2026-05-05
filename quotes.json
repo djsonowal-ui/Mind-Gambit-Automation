@@ -46,7 +46,7 @@
     "author": "Theodore Roosevelt",
     "category": "belief",
     "keywords": "sunrise, light, bright, meadow",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_001",
@@ -199,7 +199,7 @@
     "author": "Mind Gambit",
     "category": "focus",
     "keywords": "highway, driving, speed, forward",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_018",
@@ -235,7 +235,7 @@
     "author": "Mind Gambit",
     "category": "wisdom",
     "keywords": "blueprint, engineering, hands, working",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_022",
