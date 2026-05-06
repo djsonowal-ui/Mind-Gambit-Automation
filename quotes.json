@@ -118,7 +118,7 @@
     "author": "Mind Gambit",
     "category": "inner-peace",
     "keywords": "meditation, calm, lake, reflection",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_009",
@@ -154,7 +154,7 @@
     "author": "Mind Gambit",
     "category": "freedom",
     "keywords": "eagle, flight, sky, blue",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_013",
@@ -172,7 +172,7 @@
     "author": "Mind Gambit",
     "category": "habit",
     "keywords": "mansion, architecture, structure, stones",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_015",
