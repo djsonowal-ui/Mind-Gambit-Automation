@@ -55,7 +55,7 @@
     "author": "Mind Gambit",
     "category": "mindset",
     "keywords": "foggy, forest, path, mysterious",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_002",
@@ -82,7 +82,7 @@
     "author": "Mind Gambit",
     "category": "resilience",
     "keywords": "mountain, climber, sunrise, peak",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_005",
@@ -262,7 +262,7 @@
     "author": "Mind Gambit",
     "category": "change",
     "keywords": "crossroads, fork, road, decision",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_025",
