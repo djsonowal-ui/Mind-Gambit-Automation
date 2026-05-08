@@ -100,7 +100,7 @@
     "author": "Eleanor Roosevelt",
     "category": "mindset",
     "keywords": "library, books, light, study",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_007",
@@ -307,7 +307,7 @@
     "author": "Mind Gambit",
     "category": "discipline",
     "keywords": "running, track, rain, determination",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_030",
@@ -316,6 +316,6 @@
     "author": "Mind Gambit",
     "category": "mindset",
     "keywords": "garden, flowers, hands, dirt",
-    "used": false
+    "used": true
   }
 ]
