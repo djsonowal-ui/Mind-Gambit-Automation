@@ -145,7 +145,7 @@
     "author": "Epictetus",
     "category": "wealth",
     "keywords": "nature, simple, cabin, peaceful",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_012",
@@ -208,7 +208,7 @@
     "author": "Mind Gambit",
     "category": "growth",
     "keywords": "reading, coffee, cozy, morning",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_019",
@@ -298,7 +298,7 @@
     "author": "Mind Gambit",
     "category": "success",
     "keywords": "suit, skyline, skyscraper, vision",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_029",
