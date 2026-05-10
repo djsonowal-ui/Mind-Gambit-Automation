@@ -163,7 +163,7 @@
     "author": "Mind Gambit",
     "category": "wisdom",
     "keywords": "rain, window, mood, dark",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_014",
@@ -253,7 +253,7 @@
     "author": "Mind Gambit",
     "category": "action",
     "keywords": "clock, watch, time, blur",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_024",
@@ -280,7 +280,7 @@
     "author": "Mind Gambit",
     "category": "caution",
     "keywords": "crystal, macro, white, abstract",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_027",
