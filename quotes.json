@@ -127,7 +127,7 @@
     "author": "Abraham Lincoln",
     "category": "discipline",
     "keywords": "gym, weights, focus, sweat",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_010",
@@ -181,7 +181,7 @@
     "author": "Max Lucado",
     "category": "leadership",
     "keywords": "stage, lights, conductor, silhouette",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_016",
@@ -289,7 +289,7 @@
     "author": "Mind Gambit",
     "category": "perspective",
     "keywords": "notebook, writing, pencil, start",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_028",
