@@ -244,7 +244,7 @@
     "author": "Mind Gambit",
     "category": "resilience",
     "keywords": "archery, bow, tension, target",
-    "used": false
+    "used": true
   },
   {
     "id": "ai_023",
