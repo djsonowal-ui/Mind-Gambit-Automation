@@ -11,7 +11,6 @@ dotenv.config();
 
 const QUOTES_PATH = path.resolve("./quotes.json");
 
-// --- VIRAL THEME POOL ---
 const THEME_POOL = [
   {
     name: "Midnight Gold",
@@ -39,15 +38,12 @@ const THEME_POOL = [
   }
 ];
 
-// --- HASHTAG POOLS ---
 const HASHTAG_POOLS = {
   sigma: ["#sigma", "#grindset", "#discipline", "#mentality", "#hardwork", "#hustle"],
   stoic: ["#stoicism", "#stoic", "#philosophy", "#wisdom", "#innerpeace", "#mindset"],
   wealth: ["#success", "#wealth", "#abundance", "#growth", "#financialfreedom"],
   luxury: ["#luxury", "#aesthetic", "#motivation", "#lifestyle", "#premium", "#vibes"]
 };
-
-// --- SEO METADATA GENERATOR ---
 
 function generateSEOMetadata(quote, theme, scheduleTime) {
   const hooks = [
@@ -60,11 +56,9 @@ function generateSEOMetadata(quote, theme, scheduleTime) {
   ];
   const hook = hooks[Math.floor(Math.random() * hooks.length)];
   
-  // High-conversion title structure
   let title = `${hook} | ${quote.part1.toUpperCase()} ${quote.part2.toUpperCase()} #shorts #motivation`;
   if (title.length > 100) title = title.substring(0, 97) + "...";
   
-  // Dynamic Hashtag Selection
   const poolKeys = Object.keys(HASHTAG_POOLS);
   const selectedPool = HASHTAG_POOLS[poolKeys[Math.floor(Math.random() * poolKeys.length)]];
   const commonTags = ["#mindgambit", "#viral", "#shorts", "#motivation"];
@@ -82,12 +76,9 @@ function generateSEOMetadata(quote, theme, scheduleTime) {
   };
 }
 
-
-// --- PEXELS INTEGRATION ---
 async function fetchBackgroundVideo(query) {
   const apiKey = process.env.PEXELS_API_KEY;
   if (!apiKey) return null;
-  // Append quality keywords for viral look
   const viralQuery = `${query}, cinematic, 4k, moody, high contrast`;
   try {
     const response = await fetch(
@@ -96,9 +87,7 @@ async function fetchBackgroundVideo(query) {
     );
     const data = await response.json();
     if (data.videos && data.videos.length > 0) {
-      // Pick from slightly more results for variety
       const video = data.videos[Math.floor(Math.random() * Math.min(8, data.videos.length))];
-      // Prefer highest resolution
       const sortedFiles = video.video_files.sort((a, b) => b.width - a.width);
       return sortedFiles[0].link;
     }
@@ -106,15 +95,13 @@ async function fetchBackgroundVideo(query) {
   return null;
 }
 
-
-// --- RENDERING ---
 async function renderVideo(quote, videoUrl, theme, bundleLocation) {
   const inputProps = { 
     part1: quote.part1, 
     part2: quote.part2, 
     author: quote.author, 
     videoUrl, 
-    isImage: false, // Defaulting to video from Pexels
+    isImage: false,
     theme 
   };
   const composition = await selectComposition({ serveUrl: bundleLocation, id: "MotivationalShort", inputProps });
@@ -126,7 +113,7 @@ async function renderVideo(quote, videoUrl, theme, bundleLocation) {
     codec: "h264", 
     outputLocation, 
     inputProps, 
-    concurrency: 1, // Reduced to 1 to stay within memory limits for 4K
+    concurrency: 1,
     onProgress: ({ progress }) => { 
       const dots = ".".repeat(Math.floor(progress * 20));
       process.stdout.write(`⏳ Rendering [${dots.padEnd(20)}] ${(progress * 100).toFixed(1)}%\r`); 
@@ -135,13 +122,11 @@ async function renderVideo(quote, videoUrl, theme, bundleLocation) {
   return path.resolve(outputLocation);
 }
 
-
-// --- UPLOAD ---
 async function uploadToYouTube(filePath, metadata) {
   const auth = new google.auth.OAuth2(process.env.GOOGLE_CLIENT_ID, process.env.GOOGLE_CLIENT_SECRET);
   auth.setCredentials({ refresh_token: process.env.GOOGLE_REFRESH_TOKEN });
   const youtube = google.youtube({ version: "v3", auth });
-  console.log(`☁️ Uploading as PUBLIC immediately...`);
+  console.log(`☁️ Uploading as PUBLIC immediately to YouTube...`);
   await youtube.videos.insert({
     part: "snippet,status",
     requestBody: {
@@ -156,7 +141,6 @@ async function uploadToYouTube(filePath, metadata) {
   console.log("✅ YouTube upload successful!");
 }
 
-// --- INSTAGRAM UPLOAD ---
 async function uploadToInstagram(filePath, metadata) {
   const IG_ID = process.env.IG_BUSINESS_ACCOUNT_ID;
   const IG_TOKEN = process.env.IG_ACCESS_TOKEN;
@@ -167,7 +151,6 @@ async function uploadToInstagram(filePath, metadata) {
   }
 
   try {
-    // 1. Upload to temporary host (file.io)
     console.log(`📦 Hosting video temporarily for Instagram...`);
     const fileBuffer = fs.readFileSync(filePath);
     const formData = new FormData();
@@ -182,7 +165,6 @@ async function uploadToInstagram(filePath, metadata) {
     const videoUrl = hostData.link;
     console.log(`🔗 Temporary Link (expires in 1h): ${videoUrl}`);
 
-    // 2. Create Media Container
     console.log(`📸 Creating Instagram Reels container...`);
     const containerResponse = await fetch(`https://graph.facebook.com/v19.0/${IG_ID}/media`, {
       method: 'POST',
@@ -199,12 +181,11 @@ async function uploadToInstagram(filePath, metadata) {
     if (containerData.error) throw new Error("IG Container error: " + JSON.stringify(containerData.error));
     const creationId = containerData.id;
 
-    // 3. Poll for status
     console.log(`⏳ Waiting for Instagram to process video...`);
     let status = 'IN_PROGRESS';
     let attempts = 0;
     while (status === 'IN_PROGRESS' && attempts < 20) {
-      await new Promise(resolve => setTimeout(resolve, 15000)); // Increased to 15s for 4K
+      await new Promise(resolve => setTimeout(resolve, 15000));
       const statusResponse = await fetch(`https://graph.facebook.com/v19.0/${creationId}?fields=status_code&access_token=${IG_TOKEN}`);
       const statusData = await statusResponse.json();
       status = statusData.status_code;
@@ -215,7 +196,6 @@ async function uploadToInstagram(filePath, metadata) {
 
     if (status !== 'FINISHED') throw new Error("IG Processing timed out.");
 
-    // 4. Publish
     console.log(`🚀 Publishing to Instagram Reels...`);
     const publishResponse = await fetch(`https://graph.facebook.com/v19.0/${IG_ID}/media_publish`, {
       method: 'POST',
@@ -234,7 +214,6 @@ async function uploadToInstagram(filePath, metadata) {
   }
 }
 
-// --- AUTO-REPLENISHMENT ---
 async function replenishQuotes() {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) throw new Error("GEMINI_API_KEY is missing in .env");
@@ -280,23 +259,6 @@ async function replenishQuotes() {
   console.log(`✅ Success! Added ${uniqueNewQuotes.length} new quotes to quotes.json.`);
 }
 
-// --- TARGET TIMER ---
-function getNextTargetRun() {
-  const now = new Date();
-  const targetHours = [8, 14, 19]; // 8 AM, 2 PM, 7 PM
-  
-  for (const hour of targetHours) {
-    const target = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hour, 0, 0);
-    if (target.getTime() > now.getTime()) {
-      return { target, delayMs: target.getTime() - now.getTime() };
-    }
-  }
-  
-  const tomorrowTarget = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, targetHours[0], 0, 0);
-  return { target: tomorrowTarget, delayMs: tomorrowTarget.getTime() - now.getTime() };
-}
-
-// --- QUOTE SELECTION UPDATED ---
 function getNextQuote() {
   const quotes = JSON.parse(fs.readFileSync(QUOTES_PATH, "utf-8"));
   const available = quotes.filter(q => !q.used);
@@ -308,44 +270,33 @@ function getNextQuote() {
   return quote;
 }
 
-// --- MAIN ---
 async function main() {
   try {
-    console.log("🚀 Starting Non-Stop 3x Daily Upload Pipeline...");
+    console.log("🚀 Starting GitHub Actions Single Video Upload...");
     const bundleLocation = await bundle({ entryPoint: path.resolve("./src/index.jsx"), sourceMaps: false });
     
-    while (true) {
-      const nextRun = getNextTargetRun();
-      const hoursToWait = (nextRun.delayMs / (1000 * 60 * 60)).toFixed(2);
-      console.log(`⏳ Waiting ${hoursToWait} hours until the next post at ${nextRun.target.toLocaleTimeString()}...`);
-      
-      await new Promise(resolve => setTimeout(resolve, nextRun.delayMs));
-      
-      console.log(`\n🎬 Waking up! Generating and uploading video for schedule: ${nextRun.target.toLocaleTimeString()}...`);
-      
-      let quote;
-      try {
+    let quote;
+    try {
+      quote = getNextQuote();
+    } catch (error) {
+      if (error.message.includes("No more unused quotes")) {
+        console.log("🔄 Out of quotes! Automatically replenishing...");
+        await replenishQuotes();
         quote = getNextQuote();
-      } catch (error) {
-        if (error.message.includes("No more unused quotes")) {
-          console.log("🔄 Out of quotes! Automatically replenishing...");
-          await replenishQuotes();
-          quote = getNextQuote();
-        } else {
-          throw error;
-        }
+      } else {
+        throw error;
       }
-      
-      const theme = THEME_POOL[Math.floor(Math.random() * THEME_POOL.length)];
-      const videoUrl = await fetchBackgroundVideo(`${quote.keywords}, ${theme.search}`);
-      const videoPath = await renderVideo(quote, videoUrl, theme, bundleLocation);
-      const metadata = generateSEOMetadata(quote, theme, nextRun.target);
-      
-      await uploadToYouTube(videoPath, metadata);
-      await uploadToInstagram(videoPath, metadata);
-      
-      console.log(`✅ Success! Video posted at ${new Date().toLocaleTimeString()}.`);
     }
+    
+    const theme = THEME_POOL[Math.floor(Math.random() * THEME_POOL.length)];
+    const videoUrl = await fetchBackgroundVideo(`${quote.keywords}, ${theme.search}`);
+    const videoPath = await renderVideo(quote, videoUrl, theme, bundleLocation);
+    const metadata = generateSEOMetadata(quote, theme, new Date());
+    
+    await uploadToYouTube(videoPath, metadata);
+    await uploadToInstagram(videoPath, metadata);
+    
+    console.log(`✅ Success! Video posted successfully.`);
   } catch (error) {
     console.error("\n❌ Automation failed:", error);
     process.exit(1);

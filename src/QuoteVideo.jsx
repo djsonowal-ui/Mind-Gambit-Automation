@@ -6,15 +6,16 @@ import {
   spring,
   Video,
   Audio,
-  staticFile
+  staticFile,
+  Img
 } from "remotion";
 import { loadFont } from "@remotion/google-fonts/Montserrat";
 import { loadFont as loadPlayfair } from "@remotion/google-fonts/PlayfairDisplay";
 
-const { fontFamily } = loadFont();
-const { fontFamily: playfair } = loadPlayfair();
+const { fontFamily } = loadFont("normal", { ignoreTooManyRequestsWarning: true });
+const { fontFamily: playfair } = loadPlayfair("normal", { ignoreTooManyRequestsWarning: true });
 
-export const QuoteVideo = ({ part1, part2, author, videoUrl, theme }) => {
+export const QuoteVideo = ({ part1, part2, author, videoUrl, isImage, theme }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames, width } = useVideoConfig();
 
@@ -23,72 +24,85 @@ export const QuoteVideo = ({ part1, part2, author, videoUrl, theme }) => {
     name: "Midnight Gold",
     gradient: "linear-gradient(135deg, #000000 0%, #1a1a1a 100%)",
     accent: "#FFD700",
-    search: "dark, moody, luxury"
+    search: "luxury, black, dark, elegant, watch, gold"
   };
 
   // --- ANIMATIONS ---
-  const part1Opacity = interpolate(frame, [0, 15, 195, 210], [0, 1, 1, 0]);
-  const part2Opacity = interpolate(frame, [210, 225, 255, 270], [0, 1, 1, 0]);
+  // Timing: 0-7s Hook, 7s-End Reveal
+  const hookEndFrame = 210; // 7 seconds at 30fps
   
-  // Smooth Zoom (Viral movement)
-  const scale = interpolate(frame, [0, durationInFrames], [1, 1.2]);
-
-  // Spring entrance for Part 2 (Viral "Pop")
-  const part2Spring = spring({ frame: frame - 210, fps, config: { damping: 12, stiffness: 100 } });
-
-  // Floating effect for author
-  const floatY = interpolate(frame, [0, durationInFrames], [0, -20]);
+  const hookOpacity = interpolate(frame, [0, 15, hookEndFrame - 15, hookEndFrame], [0, 1, 1, 0]);
+  const revealOpacity = interpolate(frame, [hookEndFrame, hookEndFrame + 15], [0, 1]);
+  
+  // Kinetic Typography (Word-by-word)
+  const words = part2.split(" ");
+  
+  // Smooth Zoom (Viral movement / Ken Burns)
+  const scale = interpolate(frame, [0, durationInFrames], [1, 1.15]);
 
   // Handle text color
   const isLightTheme = activeTheme.name === "Morning Sky";
   const textColor = isLightTheme ? "#1a1a1a" : "white";
   const quoteColor = activeTheme.accent;
-  const sf = width / 1080;
+  const sf = width / 2160; // Scaling factor for 4K
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#000", overflow: "hidden" }}>
       {/* Background Layer with Viral Grain/Vignette */}
       <AbsoluteFill style={{ transform: `scale(${scale})`, background: activeTheme.gradient }}>
         {videoUrl && (
-          <Video
-            src={videoUrl}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              opacity: isLightTheme ? 0.4 : 0.5,
-              mixBlendMode: isLightTheme ? "multiply" : "screen",
-              filter: "contrast(1.1) brightness(0.9)"
-            }}
-            muted
-            loop
-          />
+          isImage ? (
+            <Img 
+              src={videoUrl} 
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                opacity: isLightTheme ? 0.6 : 0.7,
+                filter: "contrast(1.1) brightness(0.8) saturate(1.2)"
+              }}
+            />
+          ) : (
+            <Video
+              src={videoUrl}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                opacity: isLightTheme ? 0.4 : 0.5,
+                mixBlendMode: isLightTheme ? "multiply" : "screen",
+                filter: "contrast(1.1) brightness(0.9)"
+              }}
+              muted
+              loop
+            />
+          )
         )}
         {/* Cinematic Vignette */}
         <AbsoluteFill style={{ 
-          background: "radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%)",
+          background: "radial-gradient(circle, rgba(0,0,0,0) 20%, rgba(0,0,0,0.9) 100%)",
           mixBlendMode: "multiply"
         }} />
       </AbsoluteFill>
 
-      {/* Background Music */}
-      <Audio src={staticFile("lofi.mp3")} volume={0.4} />
+      {/* Audio Layer */}
+      <Audio src={staticFile("lofi.mp3")} volume={0.15} />
 
       {/* Watermark */}
       <div style={{
         position: "absolute",
-        bottom: 80 * sf,
+        bottom: 120 * sf,
         left: "0",
         right: "0",
         textAlign: "center",
         fontFamily,
-        fontSize: 32 * sf,
+        fontSize: 48 * sf,
         fontWeight: "900",
         color: quoteColor,
-        opacity: 0.4,
-        letterSpacing: 8 * sf,
+        opacity: 0.3,
+        letterSpacing: 12 * sf,
         textTransform: "uppercase",
-        textShadow: `0 0 ${10 * sf}px ${quoteColor}`
+        textShadow: `0 0 ${15 * sf}px ${quoteColor}`
       }}>
         MIND GAMBIT
       </div>
@@ -97,80 +111,101 @@ export const QuoteVideo = ({ part1, part2, author, videoUrl, theme }) => {
       <AbsoluteFill
         style={{
           display: "flex",
-          justifyContent: "flex-start",
+          justifyContent: "center",
           alignItems: "center",
-          padding: 100 * sf,
-          paddingTop: "30%",
-          opacity: part1Opacity,
+          padding: 200 * sf,
+          opacity: hookOpacity,
         }}
       >
         <div style={{ textAlign: "center", color: textColor }}>
           <div style={{ 
-            fontSize: 160 * sf, 
+            fontSize: 320 * sf, 
             fontFamily: playfair, 
-            marginBottom: -40 * sf, 
+            marginBottom: -80 * sf, 
             color: quoteColor,
-            textShadow: `0 0 ${20 * sf}px ${quoteColor}66`
+            textShadow: `0 0 ${40 * sf}px ${quoteColor}66`
           }}>
             “
           </div>
           <h1 style={{ 
             fontFamily: playfair, 
-            fontSize: 92 * sf, 
+            fontSize: 140 * sf, 
             fontWeight: "900", 
-            lineHeight: "1.1", 
+            lineHeight: "1.2", 
             margin: "0",
-            textShadow: isLightTheme ? "none" : `0 ${5 * sf}px ${25 * sf}px rgba(0,0,0,0.5)` 
+            textShadow: `0 ${10 * sf}px ${40 * sf}px rgba(0,0,0,0.8)` 
           }}>
-            {part1.endsWith("...") ? part1 : `${part1}...`}
+            {part1.toUpperCase()}
           </h1>
           <div style={{ 
-            marginTop: 60 * sf, 
-            height: 4 * sf, 
-            width: 150 * sf, 
+            marginTop: 80 * sf, 
+            height: 8 * sf, 
+            width: 300 * sf, 
             backgroundColor: quoteColor, 
             marginInline: "auto",
-            boxShadow: `0 0 ${15 * sf}px ${quoteColor}` 
+            boxShadow: `0 0 ${30 * sf}px ${quoteColor}` 
           }} />
           <p style={{ 
             fontFamily, 
-            fontSize: 40 * sf, 
+            fontSize: 60 * sf, 
             fontWeight: "800", 
-            marginTop: 60 * sf, 
+            marginTop: 80 * sf, 
             textTransform: "uppercase", 
-            letterSpacing: 8 * sf, 
-            opacity: 0.8,
-            transform: `translateY(${floatY}px)`
+            letterSpacing: 12 * sf, 
+            opacity: 0.9,
           }}>
             — {author} —
           </p>
         </div>
       </AbsoluteFill>
 
-      {/* Part 2: THE REVEAL (Impactful) */}
+      {/* Part 2: THE REVEAL (Kinetic Typography) */}
       <AbsoluteFill
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          padding: 80 * sf,
-          opacity: part2Opacity,
-          transform: `scale(${interpolate(part2Spring, [0, 1], [0.8, 1])})`
+          padding: 150 * sf,
+          opacity: revealOpacity,
         }}
       >
-        <div style={{ textAlign: "center", color: textColor }}>
-          <h1 style={{ 
-            fontFamily: playfair, 
-            fontSize: 120 * sf, 
-            fontWeight: "900", 
-            lineHeight: "1", 
-            color: quoteColor,
-            textShadow: `0 0 ${40 * sf}px ${quoteColor}88, 0 ${10 * sf}px ${40 * sf}px rgba(0,0,0,0.5)`
-          }}>
-            {part2}
-          </h1>
+        <div style={{ 
+          display: "flex", 
+          flexWrap: "wrap", 
+          justifyContent: "center", 
+          alignItems: "center", 
+          maxWidth: "90%" 
+        }}>
+          {words.map((word, i) => {
+            const wordDelay = hookEndFrame + (i * 2); // 2 frames delay per word for fast 1-second reveal
+            const wordSpring = spring({
+              frame: frame - wordDelay,
+              fps,
+              config: { damping: 10, stiffness: 120 }
+            });
+            
+            return (
+              <span
+                key={i}
+                style={{
+                  fontFamily: playfair,
+                  fontSize: 180 * sf,
+                  fontWeight: "900",
+                  margin: `0 ${20 * sf}px`,
+                  color: (i % 3 === 0) ? quoteColor : textColor,
+                  transform: `scale(${wordSpring}) translateY(${(1 - wordSpring) * 50}px)`,
+                  opacity: wordSpring,
+                  textShadow: `0 0 ${40 * sf}px rgba(0,0,0,0.5)`,
+                  display: "inline-block"
+                }}
+              >
+                {word.toUpperCase()}
+              </span>
+            );
+          })}
         </div>
       </AbsoluteFill>
     </AbsoluteFill>
   );
 };
+

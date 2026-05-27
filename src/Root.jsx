@@ -8,7 +8,7 @@ export const RemotionRoot = () => {
       <Composition
         id="MotivationalShort"
         component={QuoteVideo}
-        durationInFrames={270} // 9 seconds at 30fps
+        durationInFrames={240} // 8 seconds at 30fps
         fps={30}
         width={2160}
         height={3840}

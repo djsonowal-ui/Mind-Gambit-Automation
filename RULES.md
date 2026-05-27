@@ -1,35 +1,40 @@
-# Motivational Automation: Best Practices & Rules
+# Motivational Automation: Viral Instantly Protocol
 
-To ensure the stability and quality of the automated motivational quote system, follow these rules and guidelines.
+To ensure 100% virality and "scroll-stopping" quality, follow these high-performance rules.
 
-## 1. Content Quality
-- **Quotes**: Only use high-quality, impactful quotes. Avoid generic or overly long text.
-- **Author Credits**: Always include the correct author name.
-- **Keywords**: Each quote must have 3-5 descriptive keywords for Pexels background matching.
+## 1. Content Quality (The Hook)
+- **Quotes**: Focus on "The Hard Truth," "Sigma Mindset," and "High-Performance" psychology.
+- **Hook Text**: Every video must start with a psychological trigger (e.g., "Read this twice...", "99% of people fail because...").
+- **Keywords**: Use evocative keywords (e.g., "stoic," "luxury," "discipline," "empire").
 
-## 2. Background Video (Pexels)
-- **Search Orientation**: Always use `orientation=portrait` to get vertical videos.
-- **Resolution**: Use HD or higher quality video files.
-- **Variety**: Pick a random video from the top 5 results to avoid repetition for similar themes.
+## 2. Visual Excellence (The Aesthetic)
+- **Resolution**: ALWAYS render at **4K Vertical (2160 x 3840)**. 1080p is not enough for premium feeds.
+- **Backgrounds**: 
+  - Prefer AI-generated cinematic images (Midjourney style) over generic stock.
+  - If using Pexels, choose "Luxury," "Cinematic," or "Moody" filters.
+- **Motion**: Every background must have a slow zoom-in or zoom-out (Ken Burns effect).
+- **Typography**:
+  - **Hook**: Playfair Display (Serif) with Golden accents.
+  - **Reveal**: Kinetic Typography (Word-by-word pop) for maximum engagement.
+  - **Color**: High contrast white/gold on dark moody backgrounds.
 
-## 3. Video Rendering Rules (YouTube Shorts)
-- **Resolution**: Render at **1080 x 1920** (Vertical). 
-- **Framerate**: Always render at **30 fps**.
-- **Duration**: Standard duration is **10 seconds** (300 frames).
-- **Typography**: 
-  - Quote: Use `Playfair Display` (Serif) for a premium, timeless feel.
-  - Author: Use `Montserrat` (Sans-Serif) for clarity.
-- **Color Palette**: Use white text with a dark overlay (30-60% opacity) for maximum readability.
-- **Accents**: Use Golden (`#FFD700`) accents for the quote symbols and dividers.
+## 3. Audio Engineering
+- **Background**: Trending Lo-fi or Dark Ambient beats.
+- **SFX**: Add "Thud," "Whoosh," or "Bell" sound effects at key transition points (Hook -> Reveal).
+- **Subliminal**: Use subtle "Grain" or "Vinyl" textures for a tactile feel.
 
-## 4. Automation & State
-- **State Persistence**: Mark a quote as `used` in `quotes.json` **after** a successful render.
-- **Fallback**: Always have a high-quality fallback video URL in case the Pexels API fails.
+## 4. Rendering Timeline
+- **Duration**: **8-12 seconds** (Keep it punchy).
+- **The Hook**: 0s - 4s (The buildup).
+- **The Reveal**: 4s - Finish (The impact).
+- **Branding**: Mind Gambit watermark at 40% opacity with outer glow.
 
-## 5. Metadata & SEO
-- **Title**: Include a hook and #shorts (e.g., "The Secret to Success 🚀 #motivation #shorts").
-- **Description**: Add the full quote text and relevant tags.
+## 5. Metadata Strategy (SEO)
+- **Titles**: Use "Caps Lock Hooks" + Emojis (e.g., "THE TRUTH ABOUT SUCCESS 🤫 #motivation #sigma").
+- **Hashtags**: Use a mix of broad (#motivation) and niche (#mindgambit, #stoicism).
+- **Description**: First 2 lines must be the quote itself.
 
-## 6. Commands
-- **Dev**: `npm run dev` to preview in Remotion Studio.
-- **Render**: `node automate.mjs` to pick a quote, fetch a background, and render.
+## 6. Execution Commands
+- **Preview**: `npm run dev`
+- **Viral Render**: `node automate.mjs` (Generates, renders, and uploads 3x daily).
+
