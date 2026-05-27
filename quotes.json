@@ -317,5 +317,276 @@
     "category": "mindset",
     "keywords": "garden, flowers, hands, dirt",
     "used": true
+  },
+  {
+    "id": "ai_001",
+    "part1": "Most people beg for comfort, then wonder why their lives feel so empty.",
+    "part2": "Pain is the price of admission to greatness.",
+    "author": "Mind Gambit",
+    "category": "Discipline",
+    "keywords": "gym, dark, sweat, lifting, training",
+    "used": false
+  },
+  {
+    "id": "ai_002",
+    "part1": "The hard truth is, no one is coming to save you, to fix your life, or to make you happy.",
+    "part2": "You are your own savior. Act like it.",
+    "author": "Mind Gambit",
+    "category": "Mindset",
+    "keywords": "lone wolf, dark, forest, night, mist",
+    "used": false
+  },
+  {
+    "id": "ai_003",
+    "part1": "Listen carefully: Your obsession with being liked is why you are so easy to control.",
+    "part2": "Trade their approval for your freedom.",
+    "author": "Mind Gambit",
+    "category": "Stoicism",
+    "keywords": "urban, street, rain, reflection, neon",
+    "used": false
+  },
+  {
+    "id": "ai_004",
+    "part1": "Most people fail not because of a lack of talent, but because they can't survive a single boring day.",
+    "part2": "Consistency is the ultimate filter.",
+    "author": "Mind Gambit",
+    "category": "Discipline",
+    "keywords": "clock, running, track, morning, fog",
+    "used": false
+  },
+  {
+    "id": "ai_005",
+    "part1": "The hard truth is, your mind is a chaotic prison if you let your emotions hold the keys.",
+    "part2": "Rule your mind, or it will rule you.",
+    "author": "Horace",
+    "category": "Stoicism",
+    "keywords": "statue, marble, ancient, dark, philosophy",
+    "used": false
+  },
+  {
+    "id": "ai_006",
+    "part1": "Listen carefully: You are not tired, you are just uninspired by the mediocre goals you set for yourself.",
+    "part2": "Build a vision that keeps you awake.",
+    "author": "Mind Gambit",
+    "category": "Mindset",
+    "keywords": "skyline, night, heights, city, office",
+    "used": false
+  },
+  {
+    "id": "ai_007",
+    "part1": "Most people want the rewards of the warrior, but they run from the battlefield at the first sign of rain.",
+    "part2": "No sweat, no blood, no crown.",
+    "author": "Mind Gambit",
+    "category": "Discipline",
+    "keywords": "rain, warrior, armor, shadow, dark",
+    "used": false
+  },
+  {
+    "id": "ai_008",
+    "part1": "The hard truth is, the world doesn't care about your potential; it only pays for your output.",
+    "part2": "Stop planning and start executing.",
+    "author": "Mind Gambit",
+    "category": "Success",
+    "keywords": "typewriter, hands, working, desk, dark",
+    "used": false
+  },
+  {
+    "id": "ai_009",
+    "part1": "Listen carefully: If you want to find strength, look for the person who doesn't react when insulted.",
+    "part2": "Silence is the ultimate demonstration of power.",
+    "author": "Mind Gambit",
+    "category": "Mindset",
+    "keywords": "calm, ocean, storm, lighthouse, crashing waves",
+    "used": false
+  },
+  {
+    "id": "ai_010",
+    "part1": "Most people use their weekends to escape the life they built during the week.",
+    "part2": "Build a life you don't need an escape from.",
+    "author": "Mind Gambit",
+    "category": "Success",
+    "keywords": "coffee, sunrise, window, view, morning",
+    "used": false
+  },
+  {
+    "id": "ai_011",
+    "part1": "The hard truth is, you are addicted to the cheap dopamine of talking about your goals instead of working on them.",
+    "part2": "Shut your mouth and do the work.",
+    "author": "Mind Gambit",
+    "category": "Discipline",
+    "keywords": "gym, heavy, weights, iron, sweat",
+    "used": false
+  },
+  {
+    "id": "ai_012",
+    "part1": "Listen carefully: You don't need more motivation, you need more self-respect.",
+    "part2": "Keeping promises to yourself is where confidence is born.",
+    "author": "Mind Gambit",
+    "category": "Mindset",
+    "keywords": "mirror, reflection, shadow, man, dim light",
+    "used": false
+  },
+  {
+    "id": "ai_013",
+    "part1": "Most people look for an easier path, but the obstacle in your way isn't blocking your progress.",
+    "part2": "The obstacle is the way.",
+    "author": "Marcus Aurelius",
+    "category": "Stoicism",
+    "keywords": "mountain, rocky, climbing, peak, clouds",
+    "used": false
+  },
+  {
+    "id": "ai_014",
+    "part1": "The hard truth is, if you cannot control your anger, others will use it to control you.",
+    "part2": "Mastery of self is the ultimate defense.",
+    "author": "Mind Gambit",
+    "category": "Stoicism",
+    "keywords": "chess, board, strategy, dark, hands",
+    "used": false
+  },
+  {
+    "id": "ai_015",
+    "part1": "Listen carefully: A wolf doesn't lose sleep over the opinions of sheep, but a modern man loses sleep over a text message.",
+    "part2": "Reclaim your focus.",
+    "author": "Mind Gambit",
+    "category": "Mindset",
+    "keywords": "wolf, winter, snow, forest, cold",
+    "used": false
+  },
+  {
+    "id": "ai_016",
+    "part1": "Most people fail because they stop at the first sign of pain, assuming something is wrong.",
+    "part2": "Pain is just weakness leaving the body.",
+    "author": "Mind Gambit",
+    "category": "Discipline",
+    "keywords": "boxing, punching bag, sweat, dark, fighters",
+    "used": false
+  },
+  {
+    "id": "ai_017",
+    "part1": "The hard truth is, you are wasting your life pretending you have unlimited time on this earth.",
+    "part2": "Remember, you must die. Act accordingly.",
+    "author": "Mind Gambit",
+    "category": "Stoicism",
+    "keywords": "hourglass, sand, ancient, dark, skull",
+    "used": false
+  },
+  {
+    "id": "ai_018",
+    "part1": "Listen carefully: If you are always available, you will always be taken for granted.",
+    "part2": "Become scarce. Become valuable.",
+    "author": "Mind Gambit",
+    "category": "Mindset",
+    "keywords": "diamond, crystal, dark, light, luxury",
+    "used": false
+  },
+  {
+    "id": "ai_019",
+    "part1": "Most people need a crowd to feel powerful, but the strongest man is the one who stands entirely alone.",
+    "part2": "True power needs no audience.",
+    "author": "Mind Gambit",
+    "category": "Mindset",
+    "keywords": "peak, cliff, standing, mist, solo traveler",
+    "used": false
+  },
+  {
+    "id": "ai_020",
+    "part1": "The hard truth is, your cheap habits are robbing you of your expensive dreams.",
+    "part2": "Sacrifice the present for the future.",
+    "author": "Mind Gambit",
+    "category": "Discipline",
+    "keywords": "clock, luxury, dark, gold, abstract",
+    "used": false
+  },
+  {
+    "id": "ai_021",
+    "part1": "Listen carefully: When they insult you, they are giving you a test of your emotional stability.",
+    "part2": "Do not fail the test by reacting.",
+    "author": "Mind Gambit",
+    "category": "Stoicism",
+    "keywords": "rain, umbrella, storm, street, isolation",
+    "used": false
+  },
+  {
+    "id": "ai_022",
+    "part1": "Most people seek happiness in external things, turning themselves into slaves of circumstance.",
+    "part2": "Happiness is an inside job.",
+    "author": "Mind Gambit",
+    "category": "Stoicism",
+    "keywords": "statue, marcus aurelius, roman, bronze, dark",
+    "used": false
+  },
+  {
+    "id": "ai_023",
+    "part1": "The hard truth is, the version of you that you are trying to become requires you to kill your current self.",
+    "part2": "Let the old you burn.",
+    "author": "Mind Gambit",
+    "category": "Mindset",
+    "keywords": "fire, embers, dark, smoke, burning",
+    "used": false
+  },
+  {
+    "id": "ai_024",
+    "part1": "Listen carefully: If you cannot sit in a quiet room alone for an hour without your phone, you are not free.",
+    "part2": "You are a captive of your own mind.",
+    "author": "Mind Gambit",
+    "category": "Discipline",
+    "keywords": "empty room, window, shadow, light, concrete",
+    "used": false
+  },
+  {
+    "id": "ai_025",
+    "part1": "Most people think they are being loyal when they are actually just afraid of walking away.",
+    "part2": "Know your worth, then double it.",
+    "author": "Mind Gambit",
+    "category": "Mindset",
+    "keywords": "ocean, horizon, cliff, solitary, waves",
+    "used": false
+  },
+  {
+    "id": "ai_026",
+    "part1": "The hard truth is, you don't get what you wish for; you get what you tolerate.",
+    "part2": "Elevate your standards.",
+    "author": "Mind Gambit",
+    "category": "Discipline",
+    "keywords": "suits, businessman, skyline, luxury, black suit",
+    "used": false
+  },
+  {
+    "id": "ai_027",
+    "part1": "Listen carefully: Stop explaining yourself to people who are committed to misunderstanding you.",
+    "part2": "Let them be wrong.",
+    "author": "Mind Gambit",
+    "category": "Stoicism",
+    "keywords": "fog, misty road, empty, trees, dark road",
+    "used": true,
+    "lastUsed": "2026-05-27T16:48:55.498Z"
+  },
+  {
+    "id": "ai_028",
+    "part1": "Most people let temporary feelings make permanent decisions for their future.",
+    "part2": "Never make promises when happy, nor decisions when angry.",
+    "author": "Mind Gambit",
+    "category": "Stoicism",
+    "keywords": "stormy sea, waves, crashing, dark sky, storm",
+    "used": false
+  },
+  {
+    "id": "ai_029",
+    "part1": "The hard truth is, the gap between where you are and where you want to be is called your work ethic.",
+    "part2": "Close the gap.",
+    "author": "Mind Gambit",
+    "category": "Success",
+    "keywords": "training, running, track, speed, athletic",
+    "used": false
+  },
+  {
+    "id": "ai_030",
+    "part1": "Listen carefully: A king doesn't speak to be heard, he speaks because his words carry the weight of an empire.",
+    "part2": "Talk less, execute more.",
+    "author": "Mind Gambit",
+    "category": "Mindset",
+    "keywords": "crown, dark, throne, gold, royal",
+    "used": false
   }
 ]
