@@ -433,7 +433,8 @@
     "author": "Marcus Aurelius",
     "category": "Stoicism",
     "keywords": "mountain, rocky, climbing, peak, clouds",
-    "used": false
+    "used": true,
+    "lastUsed": "2026-05-28T11:58:28.279Z"
   },
   {
     "id": "ai_014",
