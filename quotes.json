@@ -379,7 +379,8 @@
     "author": "Mind Gambit",
     "category": "Discipline",
     "keywords": "rain, warrior, armor, shadow, dark",
-    "used": false
+    "used": true,
+    "lastUsed": "2026-05-28T17:06:16.645Z"
   },
   {
     "id": "ai_008",
