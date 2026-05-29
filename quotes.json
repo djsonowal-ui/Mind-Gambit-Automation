@@ -591,5 +591,281 @@
     "category": "Mindset",
     "keywords": "crown, dark, throne, gold, royal",
     "used": false
+  },
+  {
+    "id": "mg_001",
+    "part1": "Most people are addicted to comfort, thinking it's peace.",
+    "part2": "But comfort is just a slow death dressed in luxury.",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "dark, moody, luxury, fire, warm",
+    "used": false
+  },
+  {
+    "id": "mg_002",
+    "part1": "The hard truth is, nobody is coming to save you from your excuses.",
+    "part2": "Be your own damn savior.",
+    "author": "Mind Gambit",
+    "category": "discipline",
+    "keywords": "rain, dark, city, street, silhouette",
+    "used": false
+  },
+  {
+    "id": "mg_003",
+    "part1": "Listen carefully: your obsession with being liked by everyone...",
+    "part2": "Is the exact reason why you are so easily controlled.",
+    "author": "Mind Gambit",
+    "category": "stoicism",
+    "keywords": "chess, dramatic, black and white, focus",
+    "used": true,
+    "lastUsed": "2026-05-27T07:36:12.717Z"
+  },
+  {
+    "id": "mg_004",
+    "part1": "Most people fail not because they lack raw talent...",
+    "part2": "But because they cannot survive a quiet room alone.",
+    "author": "Mind Gambit",
+    "category": "discipline",
+    "keywords": "empty room, window, shadow, minimal",
+    "used": false
+  },
+  {
+    "id": "mg_005",
+    "part1": "The hard truth is, the world doesn't care about your feelings.",
+    "part2": "It only respects your results.",
+    "author": "Marcus Aurelius",
+    "category": "stoicism",
+    "keywords": "statue, ancient, greek, marble, dramatic",
+    "used": false
+  },
+  {
+    "id": "mg_006",
+    "part1": "Listen carefully: a king doesn't seek validation from his subjects...",
+    "part2": "He builds the empire while they watch and complain.",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "crown, dark, gold, throne, moody",
+    "used": true,
+    "lastUsed": "2026-05-27T07:20:07.005Z"
+  },
+  {
+    "id": "mg_007",
+    "part1": "Most people display their entire lives on social media...",
+    "part2": "While the real wolves hunt in absolute silence.",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "wolf, forest, fog, dark, nature",
+    "used": false
+  },
+  {
+    "id": "mg_008",
+    "part1": "The hard truth is, your cheap daily dopamine habits...",
+    "part2": "Are buying your future misery at retail price.",
+    "author": "Mind Gambit",
+    "category": "discipline",
+    "keywords": "phone, screen glow, dark, moody",
+    "used": true,
+    "lastUsed": "2026-05-27T07:50:50.906Z"
+  },
+  {
+    "id": "mg_009",
+    "part1": "Listen carefully: if you cannot control your own mind...",
+    "part2": "Someone else will gladly do it for you.",
+    "author": "Seneca",
+    "category": "stoicism",
+    "keywords": "storm, ocean, waves, dark sky, lightning",
+    "used": false
+  },
+  {
+    "id": "mg_010",
+    "part1": "Most people quit when the pressure gets heavy...",
+    "part2": "But pressure is the only way diamonds are made.",
+    "author": "Mind Gambit",
+    "category": "discipline",
+    "keywords": "gym, weightlifting, sweat, dark, focus",
+    "used": false
+  },
+  {
+    "id": "mg_011",
+    "part1": "The hard truth is, your potential means absolutely nothing...",
+    "part2": "Without execution, it is just a hallucination.",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "neon, typewriter, write, smoke",
+    "used": false
+  },
+  {
+    "id": "mg_012",
+    "part1": "Listen carefully: the moment you stop explaining yourself to small minds...",
+    "part2": "Is the exact moment you reclaim your power.",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "cliff, edge, silhouette, wind",
+    "used": false
+  },
+  {
+    "id": "mg_013",
+    "part1": "Most people are constantly searching for the easy way out...",
+    "part2": "While the master is looking for a heavier weight.",
+    "author": "Mind Gambit",
+    "category": "discipline",
+    "keywords": "barbell, iron, rust, training, dark",
+    "used": false
+  },
+  {
+    "id": "mg_014",
+    "part1": "The hard truth is, your mind is a dangerous neighborhood to wander in...",
+    "part2": "Don't go in there alone without the weapon of discipline.",
+    "author": "Mind Gambit",
+    "category": "stoicism",
+    "keywords": "foggy street, alley, night, moody",
+    "used": false
+  },
+  {
+    "id": "mg_015",
+    "part1": "Listen carefully: you are crying about the storm outside...",
+    "part2": "When you should be learning how to command the ship.",
+    "author": "Seneca",
+    "category": "stoicism",
+    "keywords": "boat, heavy sea, dramatic, storm, wind",
+    "used": false
+  },
+  {
+    "id": "mg_016",
+    "part1": "Most people want the reward without the scar...",
+    "part2": "But the scar is the proof that you survived the war.",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "warrior, armor, dark, smoke, battle",
+    "used": false
+  },
+  {
+    "id": "mg_017",
+    "part1": "The hard truth is, you are losing to people with half your talent...",
+    "part2": "Simply because they work while you sit there and overthink.",
+    "author": "Mind Gambit",
+    "category": "discipline",
+    "keywords": "clock, gears, time, shadow, ticking",
+    "used": false
+  },
+  {
+    "id": "mg_018",
+    "part1": "Listen carefully: the loudest person in the room is always the weakest...",
+    "part2": "True authority speaks in whispers and acts in silence.",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "lion, jungle, dark, predator, stealth",
+    "used": false
+  },
+  {
+    "id": "mg_019",
+    "part1": "Most people treat their bodies like a trash can and expect their minds to function...",
+    "part2": "Clean your temple before you pray for success.",
+    "author": "Mind Gambit",
+    "category": "discipline",
+    "keywords": "running, morning, cold, fog, athlete",
+    "used": false
+  },
+  {
+    "id": "mg_020",
+    "part1": "The hard truth is, if you don't build your own dream...",
+    "part2": "Someone else will hire you to build theirs.",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "skyline, skyscraper, heights, looking down",
+    "used": true,
+    "lastUsed": "2026-05-27T07:40:50.212Z"
+  },
+  {
+    "id": "mg_021",
+    "part1": "Listen carefully: pain does not disappear just because you ignore it...",
+    "part2": "It waits in the dark for you to get weak.",
+    "author": "Mind Gambit",
+    "category": "stoicism",
+    "keywords": "ice, cold, frozen, water, dark blue",
+    "used": false
+  },
+  {
+    "id": "mg_022",
+    "part1": "Most people confuse being busy with being productive...",
+    "part2": "An ant is busy; the tiger waits patiently for the kill.",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "tiger, eyes, grass, camouflage, predator",
+    "used": false
+  },
+  {
+    "id": "mg_023",
+    "part1": "The hard truth is, nobody owes you a single damn thing in this life...",
+    "part2": "Go out there and earn it, or shut up.",
+    "author": "Mind Gambit",
+    "category": "discipline",
+    "keywords": "boxing, heavy bag, punching, sweat, gym",
+    "used": false
+  },
+  {
+    "id": "mg_024",
+    "part1": "Listen carefully: your emotional reactions are your biggest liability...",
+    "part2": "He who angers you, owns you.",
+    "author": "Marcus Aurelius",
+    "category": "stoicism",
+    "keywords": "fire, ashes, dark, embers, calm",
+    "used": true,
+    "lastUsed": "2026-05-27T07:41:09.175Z"
+  },
+  {
+    "id": "mg_025",
+    "part1": "Most people are absolutely terrified of being alone in the dark...",
+    "part2": "But that is the exact place where the beast is forged.",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "tunnel, light at the end, shadow, walking",
+    "used": false
+  },
+  {
+    "id": "mg_026",
+    "part1": "The hard truth is, comfort is a beautifully decorated prison cell...",
+    "part2": "And you are the one holding the keys.",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "keys, chains, lock, vintage, rusty",
+    "used": false
+  },
+  {
+    "id": "mg_027",
+    "part1": "Listen carefully: stop telling people what you are going to do...",
+    "part2": "Just do it and let them witness the crime scene.",
+    "author": "Mind Gambit",
+    "category": "discipline",
+    "keywords": "smoke, mysterious, suit, shadow, gentleman",
+    "used": false
+  },
+  {
+    "id": "mg_028",
+    "part1": "Most people negotiate with their weakness every single morning...",
+    "part2": "The elite just execute without asking how they feel.",
+    "author": "Mind Gambit",
+    "category": "discipline",
+    "keywords": "sunrise, cold, morning run, shadows",
+    "used": false
+  },
+  {
+    "id": "mg_029",
+    "part1": "The hard truth is, the temporary pain of discipline is nothing...",
+    "part2": "Compared to the permanent, crushing weight of regret.",
+    "author": "Mind Gambit",
+    "category": "stoicism",
+    "keywords": "mountain peak, climber, steep, high altitude",
+    "used": true,
+    "lastUsed": "2026-05-28T04:15:22.564Z"
+  },
+  {
+    "id": "mg_030",
+    "part1": "Listen carefully: if you want to achieve an uncommon life...",
+    "part2": "You must stop doing common things with common people.",
+    "author": "Mind Gambit",
+    "category": "mindset",
+    "keywords": "eagle, flight, sky, high, clouds",
+    "used": false
   }
 ]

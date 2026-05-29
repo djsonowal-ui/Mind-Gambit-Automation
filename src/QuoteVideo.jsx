@@ -12,8 +12,14 @@ import {
 import { loadFont } from "@remotion/google-fonts/Montserrat";
 import { loadFont as loadPlayfair } from "@remotion/google-fonts/PlayfairDisplay";
 
-const { fontFamily } = loadFont("normal", { ignoreTooManyRequestsWarning: true });
-const { fontFamily: playfair } = loadPlayfair("normal", { ignoreTooManyRequestsWarning: true });
+const { fontFamily } = loadFont("normal", {
+  weights: ["400", "800", "900"],
+  subsets: ["latin"]
+});
+const { fontFamily: playfair } = loadPlayfair("normal", {
+  weights: ["400", "900"],
+  subsets: ["latin"]
+});
 
 export const QuoteVideo = ({ part1, part2, author, videoUrl, isImage, theme }) => {
   const frame = useCurrentFrame();

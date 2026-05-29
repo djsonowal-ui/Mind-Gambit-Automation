@@ -137,6 +137,7 @@ async function uploadToYouTube(filePath, metadata) {
       },
     },
     media: { body: fs.createReadStream(filePath) },
+    uploadType: "resumable",
   });
   console.log("✅ YouTube upload successful!");
 }
@@ -303,10 +304,27 @@ async function main() {
       const videoPath = await renderVideo(quote, videoUrl, theme, bundleLocation);
       const metadata = generateSEOMetadata(quote, theme, schedules[i]);
       
-      await uploadToYouTube(videoPath, metadata);
-      await uploadToInstagram(videoPath, metadata);
+      let ytSuccess = false;
+      try {
+        await uploadToYouTube(videoPath, metadata);
+        ytSuccess = true;
+      } catch (ytError) {
+        console.error(`❌ YouTube upload failed for video ${i + 1}:`, ytError.message || ytError);
+      }
       
-      console.log(`✅ Success! Video ${i + 1}/3 posted successfully.`);
+      let igSuccess = false;
+      try {
+        await uploadToInstagram(videoPath, metadata);
+        igSuccess = true;
+      } catch (igError) {
+        console.error(`❌ Instagram upload failed for video ${i + 1}:`, igError.message || igError);
+      }
+      
+      if (ytSuccess || igSuccess) {
+        console.log(`✅ Success! Video ${i + 1}/3 processed successfully.`);
+      } else {
+        console.error(`❌ Error: Video ${i + 1}/3 failed on all upload platforms.`);
+      }
     }
 
     console.log("\n🏁 Done! All 3 of today's videos have been immediately uploaded and published.");
